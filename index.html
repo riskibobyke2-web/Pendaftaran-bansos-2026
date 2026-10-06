@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Simulasi Pendaftaran Bansos</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f2f5f9;
+    }
+
+    .container {
+      max-width: 420px;
+      margin: 35px auto;
+      background: white;
+      padding: 25px;
+      border-radius: 15px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.12);
+    }
+
+    .warning {
+      background: #fff3cd;
+      color: #856404;
+      padding: 12px;
+      border-radius: 10px;
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 8px;
+    }
+
+    .deskripsi {
+      color: #666;
+      font-size: 14px;
+      text-align: center;
+    }
+
+    .counter {
+      text-align: center;
+      background: #eef6ff;
+      color: #145da0;
+      padding: 12px;
+      border-radius: 10px;
+      margin: 18px 0;
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+      margin-bottom: 6px;
+      font-weight: bold;
+    }
+
+    input {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 15px;
+    }
+
+    button {
+      width: 100%;
+      margin-top: 22px;
+      padding: 13px;
+      border: none;
+      border-radius: 8px;
+      background: #1677ff;
+      color: white;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    button:active {
+      transform: scale(0.98);
+    }
+
+    #hasil {
+      display: none;
+      margin-top: 20px;
+      padding: 15px;
+      background: #e8f5e9;
+      color: #1b5e20;
+      border-radius: 10px;
+      line-height: 1.5;
+    }
+
+    .footer {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 12px;
+      color: #888;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <div class="warning">
+      ⚠️ <b>SIMULASI EDUKASI</b><br>
+      Halaman ini dibuat untuk mempelajari cara kerja
+      modus phishing. Data yang dimasukkan tidak dikirim
+      dan tidak disimpan.
+    </div>
+
+    <h2>Program Bantuan Sosial</h2>
+
+    <p class="deskripsi">
+      Formulir simulasi pendaftaran bantuan sosial.
+    </p>
+
+    <!-- JUMLAH PENDAFTAR FIKTIF -->
+    <div class="counter">
+      👥 <b><span id="jumlah">1247</span> orang</b>
+      telah mendaftar
+    </div>
+
+    <form id="form">
+
+      <label>Nama Lengkap</label>
+      <input
+        type="text"
+        placeholder="Contoh: Budi"
+      >
+
+      <label>NIK</label>
+      <input
+        type="text"
+        placeholder="Contoh: 0000000000000000"
+      >
+
+      <label>Nomor HP</label>
+      <input
+        type="tel"
+        placeholder="Contoh: 08xxxxxxxxxx"
+      >
+
+      <button type="submit">
+        Daftar Sekarang
+      </button>
+
+    </form>
+
+    <!-- HASIL SIMULASI -->
+    <div id="hasil">
+      ✅ <b>SIMULASI SELESAI</b><br><br>
+
+      Ini adalah contoh bagaimana halaman phishing
+      dapat mencoba meyakinkan seseorang untuk memasukkan
+      data pribadi.
+
+      <br><br>
+
+      Pada simulasi ini, data tidak dikirim ke siapa pun.
+    </div>
+
+    <div class="footer">
+      Materi simulasi keamanan digital
+    </div>
+
+  </div>
+
+
+  <script>
+
+    // Angka awal hanya angka fiktif
+    let jumlah = 1247;
+
+    document
+      .getElementById("form")
+      .addEventListener("submit", function(event) {
+
+        // Mencegah data dikirim ke server
+        event.preventDefault();
+
+        // Menambah angka pendaftar fiktif
+        jumlah++;
+
+        document
+          .getElementById("jumlah")
+          .textContent = jumlah;
+
+        // Menampilkan pesan edukasi
+        document
+          .getElementById("hasil")
+          .style.display = "block";
+
+        // Mengosongkan formulir
+        this.reset();
+
+      });
+
+  </script>
+
+</body>
+</html>
